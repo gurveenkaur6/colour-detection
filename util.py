@@ -16,6 +16,7 @@ def get_limits(color):
     # in OpenCV, hue ranges from 0 - 180 degree, so red appears at both ends of this range.
 
     if hue >= 165:  # If the hue is ≥ 165, it's treating it as the upper part of the red range.
+        # Makes sure that we capture the entire red spectrum even though it wraps around.
         lowerLimit = np.array([hue - 10, 100, 100], dtype=np.uint8)
         upperLimit = np.array([180, 255, 255], dtype=np.uint8)
 
