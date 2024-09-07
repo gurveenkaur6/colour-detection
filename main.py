@@ -21,6 +21,10 @@ while True:
 
     lowerlimit, upperlimit = get_limits(yellow)
 
+    # Returns a mask/binary mask ( a binary image that defines which pixels in the given image should be considered (white or 1) and which should be ignored (black or 0).)
+    # white areas in the mask correspond to pixels in the frame that match the specified color range, black corresponds to pixels that don't match the color range
+    mask = cv2.inRange(hsv, lowerlimit, upperlimit)
+
     # converts OpenCV image which is a python numpy array to a PIL (Python Imaging Library) Image object
     mask_ = Image.fromarray(mask)
 
@@ -30,10 +34,6 @@ while True:
     if bbox is not None:
         x1, y1, x2, y2 = bbox
         frame = cv2.rectangle(frame, (x1,y1), (x2,y2), (0,255,0), 5)
-
-    # Returns a mask/binary mask ( a binary image that defines which pixels in the given image should be considered (white or 1) and which should be ignored (black or 0).)
-    # white areas in the mask correspond to pixels in the frame that match the specified color range, black corresponds to pixels that don't match the color range
-    mask = cv2.inRange(hsv, lowerlimit, upperlimit)
     
     cv2.imshow('Frame', frame)
 
