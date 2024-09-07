@@ -10,6 +10,9 @@ while True:
     # frame is the captured image in the BGR color space
     ret, frame = cap.read() 
 
+    # convert from BGR to HSV color space
+    cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
     cv2.imshow('Frame', frame)
 
     if (cv2.waitKey(1) & 0xFF) == ord('q'):
