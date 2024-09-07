@@ -11,7 +11,8 @@ while True:
     ret, frame = cap.read() 
 
     # convert from BGR to HSV color space
-    cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    # HSV is prefered over RGB for color detection tasks because it separates color information (hue) from intensity (value)
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     cv2.imshow('Frame', frame)
 
