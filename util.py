@@ -4,7 +4,7 @@ import cv2
 def get_limits(color):
     "Returns the lower and upper HSV color limits for a given BGR color"
 
-    c = np.uint8([color])
+    c = np.uint8([[color]])
     # convert BGR to HSV 
     hsvc = cv2.cvtColor(c, cv2.COLOR_BGR2HSV)
 
