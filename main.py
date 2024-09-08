@@ -30,7 +30,8 @@ while True:
 
     # put a box or contour the white region in the mask
     bbox = mask_.getbbox() 
-
+    
+    # create a green rectangle if the bounding box is not None
     if bbox is not None:
         x1, y1, x2, y2 = bbox
         frame = cv2.rectangle(frame, (x1,y1), (x2,y2), (0,255,0), 5)
