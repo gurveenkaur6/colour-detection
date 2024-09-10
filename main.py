@@ -38,6 +38,7 @@ while True:
     
     cv2.imshow('Frame', frame)
 
+    # if quit is pressed, we break the loop
     if (cv2.waitKey(1) & 0xFF) == ord('q'):
         break
 
