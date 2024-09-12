@@ -28,7 +28,7 @@ while True:
     # converts OpenCV image which is a python numpy array to a PIL (Python Imaging Library) Image object
     mask_ = Image.fromarray(mask)
 
-    # put a box or contour the white region in the mask
+    # place a box or contour the white region in the mask
     bbox = mask_.getbbox() 
     
     # create a green rectangle if the bounding box is not None
