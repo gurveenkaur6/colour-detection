@@ -11,7 +11,7 @@ def get_limits(color):
     # extract the hue value from the hsvc. Hue represents color, saturation -> intensity and value -> brightness
     hue = hsvc[0][0][0]
 
-    # red hue wrap around issue
+    # The red hue wrap around issue
     # hue is represented as a circle and it is at both the ends(0 and 360 degree) of the circle.
     # in OpenCV, hue ranges from 0 - 180 degree, so red appears at both ends of this range.
 
